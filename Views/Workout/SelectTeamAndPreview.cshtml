@@ -1,0 +1,259 @@
+﻿@{
+    ViewData["Title"] = "Select Team";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sports Website</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #000435;
+            color: #D4AF37;
+            height: 140vh;
+        }
+
+        header {
+            background: #D4AF37;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+            nav ul li {
+                margin-left: 1rem;
+            }
+
+                nav ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+        .cta {
+            background: #D4AF37;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .hero {
+            background: url('images/hero.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        section {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        .events, .news, .team-grid, .testimonial-carousel, .sponsor-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .event-card, .news-card, .team-card, .testimonial-card {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+
+            .event-card img, .news-card img, .team-card img, .testimonial-card img {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+
+        .sponsor-logos img {
+            max-width: 10%;
+            margin: 0 1rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .newsletter input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #fff;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .newsletter button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+            background: #D4AF37;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+        }
+
+        footer {
+            background: #D4AF37;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+            footer .quick-links, footer .social-media, footer .contact-info {
+                margin-bottom: 1rem;
+            }
+
+            footer a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 0.5rem;
+            }
+
+        /* Optional CSS for styling */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 3 columns of equal width */
+            gap: 10px; /* Gap between grid items */
+            padding: 10px; /* Padding around the grid */
+            
+        }
+
+        }
+
+        .image-grid-item {
+            border: 1px solid #ccc; /* Optional: border around each grid item */
+            padding: 10px; /* Optional: padding inside each grid item */
+            width: 100%; /* Ensure images fill their grid items */
+            display: block; /* Remove extra spacing below images */
+
+        }
+        </style>
+        </head>
+        
+<body>
+    <div class="text-center">
+        <h1 class="display-6">Select Team</h1>
+    </div>
+
+        <div class="image-grid">
+            <div class="image-grid-item">
+            <a href="mt-3">
+                <img input type="image" src="https://switchbrand.co.za/wp-content/uploads/Switch-Web-01.jpg" style="width:150px;height:120px;" />
+            </a>
+            </div>
+            <div class="image-grid-item">
+            <a href="mt-3">
+                <img input type="image" src="https://content.sportslogos.net/news/2016/04/all-blacks-logo.png" style="width:150px;height:120px;" />
+            </a>
+            </div>
+            <div class="image-grid-item">
+            <a href="mt-3">
+                <img input type="image" src="https://wallpapers.com/images/featured/ireland-rugby-51i2dskz5edoilnf.jpg" style="width:150px;height:120px;" />
+            </a>
+            </div>
+            <div class="image-grid-item">
+                <a href="mt-3">
+                <img input type="image" src="https://rhinoshield.eu/cdn/shop/collections/FFR_icon_626e2693-1212-4a99-b17e-c599e038bb4a.jpg" style="width:150px;height:120px;" />
+            </a>
+            </div>
+            <div class="image-grid-item">
+                <a href="mt-3">
+                <img input type="image" src="https://searchvectorlogo.com/wp-content/uploads/2020/09/england-rugby-logo-vector.png" style="width:150px;height:120px;" />
+                </a>
+            </div>
+            <div class="image-grid-item">
+                <a href="mt-3">
+                <img input type="image" src="https://wallpapers.com/images/hd/scotland-rugby-1920-x-1080-wallpaper-q36d9gequohzgo36.jpg" style="width:150px;height:120px;" />
+                </a>
+            </div>
+        </div>
+
+    <div class="text-center">
+        <h1 class="display-6">Select Athlete</h1>
+    </div>
+
+    <div class="image-grid">
+        <div class="image-grid-item">
+            <a href="mt-3">
+            <img input type="image" src="https://dims.apnews.com/dims4/default/4102c14/2147483647/strip/true/crop/7260x4840+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fa3%2Fd8%2Ff5b85cd6ca0767be8fb692b190fa%2F3adeffaa0524474a968151067b4156cb" style="width:150px;height:120px;" />
+            </a>
+        </div>
+        <div class="image-grid-item">
+            <a href="mt-3">
+            <img input type="image" src="https://static.independent.co.uk/2023/09/07/17/newFile.jpg" style="width:150px;height:120px;" />
+            </a>
+        </div>
+        <div class="image-grid-item">
+            <a href="mt-3">
+            <img input type="image" src="https://static.independent.co.uk/2024/01/17/14/b22268b65a19e9dcf37600028f0509dfY29udGVudHNlYXJjaGFwaSwxNzA1NTg0ODk4-2.70870307.jpg" style="width:150px;height:120px;" />
+            </a>
+        </div>
+        <div class="image-grid-item">
+            <a href="mt-3">
+            <img input type="image" src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/N2IONQODFVI25CQHRCMSOD2DBA.jpg" style="width:150px;height:120px;" />
+            </a>
+        </div>
+        <div class="image-grid-item">
+            <a href="mt-3">
+            <img input type="image" src="https://e3.365dm.com/23/11/1600x900/skynews-owen-farrell-england_6376701.jpg?20231129152515" style="width:150px;height:120px;" />
+            </a>
+        </div>
+        <div class="image-grid-item">
+            <a href="mt-3">
+            <img input type="image" src="https://e0.365dm.com/22/10/2048x1152/skysports-finn-russell-scotland_5936128.jpg?20221019153441" style="width:150px;height:120px;" />
+            </a>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h1 class="display-6">Preview</h1>
+    </div>
+</body>
+</html>
+
+
+
+

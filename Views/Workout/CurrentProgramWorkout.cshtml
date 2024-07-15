@@ -1,0 +1,107 @@
+﻿<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    header {
+        background: #D4AF37;
+        color: #fff;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    body {
+        line-height: 1.6;
+        background-color: #000435;
+        color: #D4AF37;
+    }
+
+    footer {
+        background: #D4AF37;
+        color: #fff;
+        padding: 1rem 2rem;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+    .title-color {
+        color: #D4AF37;
+        text-align: center;
+    }
+
+    .scrollable-list-container {
+        margin-block-start: 1rem;
+        max-height: 400px;
+        width: auto;
+        border: 1px solid #D4AF37;
+        padding: 1rem;
+        background-color: white;
+        overflow-y: scroll;
+    }
+
+    .scrollable-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        color: #D4AF37;
+    }
+
+        .scrollable-list li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            color: #D4AF37;
+        }
+
+            .scrollable-list li:last-child {
+                border-bottom: none;
+            }
+
+    .button {
+        display: block;
+        width: 40%;
+        margin: 1em auto;
+        height: 1em;
+        font-size: 1.2rem;
+        background-color: #D4AF37;
+        border-width: 3px;
+        border-color: white;
+        color: white;
+        min-width: 200px;
+        min-height: 50px;
+        text-align: center;
+        border-radius: 10px;
+    }
+</style>
+
+ <body>
+    <div class="align-self-sm-center">
+        <!-- In CurrentProgramWorkout.cshtml -->
+        @using (Html.BeginForm("BodyPartSelect", "Workout", FormMethod.Get))
+        {
+            <input class="button" type="submit" value="Add Workout Program" />
+        }
+    </div>
+ </body>

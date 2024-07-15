@@ -1,0 +1,331 @@
+﻿
+@{
+    ViewData["Title"] = "SelectExercise";
+
+}
+@model Tuple<List<BootstrapProto.Models.Entities.Excercise>,List<BootstrapProto.Models.Entities.Warm_Ups>,List<BootstrapProto.Models.Entities.BodyPart>>
+ 
+<div class="select-exercise">
+    <p></p>
+</div>
+
+<style>
+    header {
+        background: #D4AF37;
+        color: #fff;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    body {
+        line-height: 1.6;
+        background-color: #000435;
+        color: #D4AF37;
+    }
+
+    .center-button {
+        display: block;
+        width: 40%;
+        margin: 1em auto;
+        height: 1em;
+        font-size: 1.2rem;
+        background-color: #D4AF37;
+        border-width: 3px;
+        border-color: white;
+        color: white;
+        min-width: 200px;
+        min-height: 50px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    </style>
+
+
+    @* Table Styles *@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts and Warm-Ups for Athletes</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            font-color: black;
+        }
+
+        .header {
+            color: ;
+        }
+
+        .cell {
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Body Part Selected:</h1>
+
+    <div id="category-label"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const category = params.get('category');
+            if (category) {
+                const categoryLabelElement = document.getElementById('category-label');
+                categoryLabelElement.textContent = category;
+            }
+        });
+    </script>
+
+    <h1>Workouts and Warm-Ups for Athletes</h1>
+
+    <h2>General Warm-Ups <input type="checkbox"></h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="header">Type</th>
+                <th class="header">Exercises</th>
+                <th class="header">Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="header">Warm-Ups</td>
+                <td class="cell">
+                    Dynamic Stretching: Arm Circles, Leg Swings, Torso Twists, Hip Circles, High Knees, Butt Kicks, Walking Lunges, Inch Worms<br>
+                    Sport-Specific Movements: Skipping, Carioca, Backpedal Run, High Skips
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    @foreach (var item in Model.Item3)
+    {
+        <h2>@item.BodyPartName <input type="checkbox"></h2>
+    }
+    <table>
+        <thead>
+            <tr>
+                <th class="header">Type</th>
+                <th class="header">Exercises</th>
+                <th class="header">Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            <tr>
+                <td class="header">Workouts</td>
+               
+                    <td class="cell">
+                    @foreach (var item in Model.Item2)
+                    {
+                        @item.WarmUpName 
+                    }
+                    , 
+                 </td>
+                
+                
+               
+            </tr>
+                           
+            <tr>
+                <td class="header">Warm-Ups</td>
+                <td class="cell">Arm Circles, Light Dumbbell Curls, Tricep Stretch</td>
+                <td></td>
+               
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>Back and Shoulders <input type="checkbox"></h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="header">Type</th>
+                <th class="header">Exercises</th>
+                <th class="header">Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="header">Workouts</td>
+                <td>
+                    Back: Deadlifts, Pull-Ups/Chin-Ups, Bent Over Rows, Lat Pulldowns, T-Bar Rows, Seated Cable Rows<br>
+                    Shoulders: Overhead Press, Lateral Raises, Front Raises, Rear Delt Flyes, Shrugs
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="header">Warm-Ups</td>
+                <td class="cell">Arm Swings, Shoulder Circles, Band Pull-Aparts, Scapular Push-Ups</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Chest <input type="checkbox"></h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="header">Type</th>
+                <th class="header">Exercises</th>
+                <th class="header">Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="header">Workouts</td>
+                <td class="cell">Bench Press, Push-Ups, Dumbbell Flyes, Incline Bench Press, Chest Dips, Cable Crossovers</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="header">Warm-Ups</td>
+                <td class="cell">Arm Circles, Light Push-Ups, Pec Stretch</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Abs <input type="checkbox"></h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="header">Type</th>
+                <th class="header">Exercises</th>
+                <th class="header">Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="header">Workouts</td>
+                <td class="cell">Planks (Front and Side), Crunches, Leg Raises, Russian Twists, Bicycle Crunches, Hanging Leg Raises, Ab Rollouts</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="header">Warm-Ups</td>
+                <td class="cell">Cat-Cow Stretch, Trunk Twists, Standing Side Bend</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Legs <input type="checkbox"></h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="header">Type</th>
+                <th class="header">Exercises</th>
+                <th class="header">Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="header">Workouts</td>
+                <td class="cell">
+                    Quadriceps: Squats, Leg Press, Lunges, Step-Ups, Bulgarian Split Squats<br>
+                    Hamstrings: Deadlifts (Romanian or Conventional), Hamstring Curls, Glute Bridges, Nordic Hamstring Curls<br>
+                    Calves: Calf Raises, Seated Calf Raises, Donkey Calf Raises
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="header">Warm-Ups</td>
+                <td class="cell">Leg Swings, Walking Lunges, High Knees, Bodyweight Squats</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Cardio <input type="checkbox"></h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="header">Type</th>
+                <th class="header">Exercises</th>
+                <th class="header">Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="header">Workouts</td>
+                <td class="cell">
+                    High-Intensity Interval Training (HIIT): Sprint Intervals, Tabata Protocol (20s work, 10s rest), Circuit Training<br>
+                    Steady-State Cardio: Running/Jogging, Cycling, Swimming, Rowing<br>
+                    Sport-Specific Drills: Agility Ladder, Cone Drills, Shuttle Runs
+                </td>
+                <td></td>
+                
+            </tr>
+            <tr>
+                <td class="header">Warm-Ups <input type="checkbox"></td>
+                <td class="cell">Light Jogging, Jumping Jacks, Dynamic Stretching, Skipping</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Checkbox preview section -->
+    <div id="checkbox-preview">
+        <h2>Selected Workout Categories:</h2>
+        <ul id="selected-categories">
+            <!-- List items for each checkbox section -->
+        </ul>
+    </div>
+
+    <!-- Script to update checkbox preview -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to update the checkbox preview
+            function updateCheckboxPreview() {
+                const selectedCategories = document.querySelectorAll('h2 input[type="checkbox"]:checked');
+                const previewList = document.getElementById('selected-categories');
+                previewList.innerHTML = ''; // Clear previous items
+
+                selectedCategories.forEach(function (category) {
+                    const categoryName = category.parentNode.textContent.trim();
+                    const listItem = document.createElement('li');
+                    listItem.textContent = categoryName;
+                    previewList.appendChild(listItem);
+                });
+            }
+
+            // Attach event listener to checkboxes
+            const checkboxes = document.querySelectorAll('h2 input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                checkbox.addEventListener('change', updateCheckboxPreview);
+            });
+
+            // Initial update of checkbox preview
+            updateCheckboxPreview();
+        });
+    </script>
+</body>
+
+<!-- In CurrentProgramWorkout.cshtml -->
+@using (Html.BeginForm("SelectTeamAndPreview", "Workout", FormMethod.Get))
+{
+    <input class="center-button" type="submit" value="Add Exercises" />
+}
+
+

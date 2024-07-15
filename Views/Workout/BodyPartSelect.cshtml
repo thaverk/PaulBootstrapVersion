@@ -1,0 +1,226 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<BootstrapProto.Models.Entities.BodyPart>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+        line-height: 1.6;
+        background-color: #000435;
+        color: #D4AF37;
+        height: 300vh;
+    }
+
+    header {
+        background: #D4AF37;
+        color: #fff;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+    .cta {
+        background: #D4AF37;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .hero {
+        background: no-repeat center center/cover;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    section {
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    .events, .news, .team-grid, .testimonial-carousel, .sponsor-logos {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .event-card, .news-card, .team-card, .testimonial-card {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 30%;
+    }
+
+        .event-card img, .news-card img, .team-card img, .testimonial-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+    .sponsor-logos img {
+        max-width: 10%;
+        margin: 0 1rem;
+        width: 50px;
+        height: 50px;
+    }
+
+    .newsletter form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .newsletter input {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #fff;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .newsletter button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: #D4AF37;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+    }
+
+    footer {
+        background: #D4AF37;
+        color: #fff;
+        padding: 1rem 2rem;
+        text-align: center;
+    }
+
+        footer .quick-links, footer .social-media, footer .contact-info {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+</style>
+
+<div class="text-center">
+<h1 class="display-1">Select Body Part</h1>
+</div>
+
+
+@foreach (var bodypart in Model)
+{
+    <div class="text-center">
+    <label class="display-6">@bodypart.BodyPartName</label>
+</div>
+    <div class="text-center">
+        <a href="@Url.Action("SelectExercise",new { id = bodypart.BodyPartId})">
+ <img input type="image" src="@bodypart.BodyPartImage;0.250xw,0&resize=640:*" style="width:250px;height:250px;" />
+        </a>
+    </div>
+
+}
+@* <div class="text-center">
+    <label class="display-6">Arms</label>
+</div>
+    <div class="text-center">
+        <a href="@Url.Action("SelectExercise")">
+             <img input type="image" src="https://hips.hearstapps.com/hmg-prod/images/bodybuilder-preparing-a-barbell-on-a-power-rack-in-royalty-free-image-1604683794.?crop=0.750xw:1.00xh;0.250xw,0&resize=640:*" style="width:250px;height:250px;" />
+        </a>
+    </div>
+
+    <div class="text-center">
+        <label class="display-6">Back And Shoulders</label>
+    </div>
+
+    <div class="text-center">
+    <a href="@Url.Action("SelectExercise")">
+        <img input type="image" src="https://cdn11.bigcommerce.com/s-3pp378gtvu/images/stencil/2560w/uploaded_images/shoulder-and-back-workout.jpg?t=1668539564" style="width:250px;height:250px;" />
+    </a>
+    </div>
+
+    <div class="text-center">
+        <label class="display-6">Chest</label>
+    </div>
+    <div class="text-center">
+    <a href="@Url.Action("SelectExercise")">
+        <img input type="image" src="https://hansplace.com/wp-content/uploads/iStock_000015641412Small-2.jpg" style="width:250px;height:250px;" />
+    </a>
+    </div>
+    <div class="text-center">
+        <label class="display-6">Abs</label>
+    </div>
+
+    <div class="text-center">
+    <a href="@Url.Action("SelectExercise")">
+        <img input type="image" src="https://i0.wp.com/www.muscleandfitness.com/wp-content/uploads/2019/08/Guy-Showing-Off-Abs-and-Chest.jpg?quality=86&strip=all" style="width:250px;height:250px;" />
+    </a>
+    </div>
+    <div class="text-center">
+        <label class="display-6">Legs</label>
+    </div>
+
+    <div class="text-center">
+    <a href="@Url.Action("SelectExercise")">
+        <img input type="image" src="https://i0.wp.com/www.muscleandfitness.com/wp-content/uploads/2000/09/Man-And-Woman-Showing-Muscular-Legs.jpg?quality=86&strip=all" style="width:250px;height:250px;" />
+    </a>
+    </div>
+    
+    <div class="text-center">
+        <label class="display-6">Cardio</label>
+    </div>
+
+    <div class="text-center">
+    <a href="@Url.Action("SelectExercise")">
+        <img input type="image" src="https://youfit.com/wp-content/uploads/2022/09/cardio-workouts-at-the-gym.png" style="width:250px;height:250px;" />
+    </a>
+    </div> *@
+

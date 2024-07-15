@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000435;
+    }
+
+    /* Navigation Styles */
+    nav {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+            .nav-links a:hover {
+                color: #D4AF37;
+                border-bottom: 2px solid #D4AF37;
+                padding-bottom: 5px;
+            }
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="CurrentProgramWorkout">Current Program</a></li>
+            <li><a href="SelectExercise">Select Exercise</a></li>
+            <li><a href="SelectTeamAndPreview">Team Viewer</a></li>
+            <li><a href="BodyPartSelect">Body Part Select</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
